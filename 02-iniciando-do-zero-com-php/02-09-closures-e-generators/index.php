@@ -7,8 +7,37 @@ fullStackPHPClassName("02.09 - Closures e generators");
  */
 fullStackPHPClassSession("closures", __LINE__);
 
+$myAge = function($year) {
+$age = date("Y")  - $year;
+return "<p> Você tem {$age} anos! </p>";
 
+};
+echo $myAge(1985);
+
+$priceBlr = function($price){
+    return number_format($price, 2, ",",".");
+};
+
+echo "<p> Projeto custa {$priceBlr(3500)}.";
 /*
  * [ generators ] https://php.net/manual/pt_BR/language.generators.overview.php
  */
 fullStackPHPClassSession("generators", __LINE__);
+
+$iterator = 10;
+
+function showDates($days)
+{
+    $showDate = [];
+    for($day = 1; $day < $days; $day++){
+        $saveDate[] = date("d/m/Y", strtotime("+{$day}days"));
+    }
+
+    return $saveDate;
+}
+
+echo "<div style='text-align: center'>";
+foreach (showDates($iterator) as $date) {
+    echo "<small class='tag'>{$date}</small>" . PHP_EOL;
+}
+echo "</div>";

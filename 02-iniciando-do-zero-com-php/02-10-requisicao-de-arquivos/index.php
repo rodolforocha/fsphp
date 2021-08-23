@@ -8,6 +8,17 @@ fullStackPHPClassName("02.10 - Requisição de arquivos");
  */
 fullStackPHPClassSession("include, include_once", __LINE__);
 
+//include "header.php";
+
+include __DIR__ . "/header.php";
+
+$profile = new StdClass();
+$profile-> name = "Rodolfo";
+$profile-> company = "Upinside";
+$profile-> email = "rodolfoalr@gmail.com";
+
+
+include __DIR__ . "/profile.php";
 
 /*
  * [ require ] https://php.net/manual/pt_BR/function.require.php
